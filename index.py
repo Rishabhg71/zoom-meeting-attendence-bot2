@@ -53,7 +53,7 @@ def loginZoom():
 
 
 # time.sleep(10)
-def clearMess():
+def clearMess1():
     try:
         # driver.find_element_by_css_selector('#main > header > div.YmSrp > div > div:nth-child(3)').click()
         # ._3TbsN > div:nth-child(1) > span:nth-child(1)
@@ -62,6 +62,7 @@ def clearMess():
         time.sleep(0.4)
         # driver.find_element_by_css_selector('#main > header > div.YmSrp > div > div.rAUz7._3TbsN > span > div > ul > li:nth-child(4) > div').click()
         element = driver.execute_script('return document.querySelector("#main > header > div.YmSrp > div > div.rAUz7._3TbsN > span > div > ul > li:nth-child(4) > div")')
+
         element.click()
         time.sleep(0.5)
         element = driver.execute_script('return document.querySelector("#app > div > span:nth-child(2) > div > div > div > div > div > div > div._3QNwO > div._1WZqU.PNlAR")')
@@ -74,11 +75,12 @@ def clearMess():
 
 
 
-def clearMess1():
+def clearMess():
     try:
         # driver.find_element_by_css_selector('#main > header > div.YmSrp > div > div:nth-child(3)').click()
         # driver.find_e
-        element = driver.execute_script('return document.querySelector("._3TbsN")')
+
+        element = driver.execute_script('return document.querySelector("#main > header > div.YmSrp > div > div:nth-child(2)")')
         element.click()
         time.sleep(0.4)
         # driver.find_element_by_css_selector('#main > header > div.YmSrp > div > div.rAUz7._3TbsN > span > div > ul > li:nth-child(4) > div').click()
@@ -117,47 +119,11 @@ def openFirstTime():
 
 
 def checkAgain():
-    # html = driver.execute_script("return document.querySelector('#main > div._3zJZ2 > div > div > div._9tCEa > div.vW7d1._2Rrsd.message-in.focusable-list-item > div > div.MVjBr._3e2jK > div').innerHTML;")
-    # # element = driver.find_element_by_css_selector('#main > div._3zJZ2 > div > div > div._9tCEa > div.vW7d1._2Rrsd.message-in.focusable-list-item > div > div.MVjBr._3e2jK > div')
-    # # html = element.getAttribute('innerHTML')
-    # print(html)
-    # # return html
-    # clearMess()
-    # link = extractLink(html)
-    # print(link)
-    # window = openNewTab(link)
-    # if window != False:
-    #     joinClass()
-
-    #     print('joined the class')
-
-
-
-
-
-
     try:
         try:
             # html = driver.execute_script("return document.querySelector('#main > div._3zJZ2 > div > div > div._9tCEa > div.vW7d1._2Rrsd.message-in.focusable-list-item > div > div.MVjBr._3e2jK > div').innerHTML;")
-
-
-
-
-
             # element = driver.find_element_by_css_selector('#main > div._3zJZ2 > div > div > div._9tCEa > div.vW7d1._2Rrsd.message-in.focusable-list-item > div > div.MVjBr._3e2jK > div')
             html = driver.find_element_by_class_name('Tkt2p').get_attribute('innerHTML')
-
-
-
-
-
-
-
-            # html = element.getAttribute('innerHTML')
-
-
-
-
             print(html)
             # return html
             clearMess()
@@ -165,7 +131,7 @@ def checkAgain():
             print(link)
             window = openNewTab(link)
 
-            joinClass()
+            joinClass(link)
             time.sleep(2)
             try:
                 pass
@@ -224,7 +190,7 @@ def extractLink(html):
 
 
 
-def joinClass():
+def joinClass(link):
     # time.sleep(3)
     # driver.get(link)
     time.sleep(8)
@@ -234,9 +200,10 @@ def joinClass():
     time.sleep(2)
     pag.press('enter')
     # elem = driver.find_element_by_tag_name('body')
-    driver.close()
+    if link != False:
+        driver.close()
     time.sleep(2)
-    driver.switch_to.window(driver.window_handles[0])
+
 
     # elem.click()
     # elem.send_keys(Keys.CONTROL + 'w')
@@ -247,50 +214,13 @@ def joinClass():
 
     # driver.execute_script('close()')
     try:
-        pass
+        driver.switch_to.window(driver.window_handles[0])
         # driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + 'w')
         # driver.switch_to_window(window[0])
         # driver.send_keys(Keys.CONTROL + 'w')
         # driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + 'w')
     except:
         print('some thing is # WARNING: ')
-    # obj.send_keys(keys.ENTER)
-    # pag.press('enter')
-    # keyboard.press_and_release('enter')
-    # time.sleep(5)
-    # driver.find_element_by_name('inputname').send_keys(Keys.ENTER)
-
-    # driver.execute_script('location.reload();')
-    # print('page reloaded')
-    # time.sleep(5)
-
-
-
-
-
-
-    # driver.find_element_by_link_text('click here').click()
-    # time.sleep(0.5)
-    # time.sleep(3)
-    # driver.find_element_by_tag_name('body').send_keys(Keys.COMMAND + 't')
-    # time.sleep(3)
-    # driver.find_element_by_partial_link_text('join').click()
-    # time.sleep(5)
-    # driver.find_element_by_name('inputname').send_keys(Keys.ENTER)
-    # time.sleep(10)
-    # try:
-    #     html = driver.execute_script("return document.querySelector('#prompt > h4').innerHTML;")
-    #     print(html)
-    #     while 'not' in html:
-    #
-    #         driver.execute_script('location.reload();')
-    #         print('since class not Reloading')
-    #         time.sleep(4)
-    #         html = driver.execute_script("return document.querySelector('#prompt > h4').innerHTML;")
-    # except:
-    #     print('class already started')
-    # driver.switch_to_window(window[0])
-
 
 
 
@@ -308,7 +238,7 @@ link = extractLink(html)
 print('parsing link',link)
 window = openNewTab(link)
 # driver.switch_to_window(window[0])
-joinClass()
+joinClass(link)
 
 
 try:
